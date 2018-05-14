@@ -9,7 +9,7 @@ var losses = 1;//declaring values for later ( = 1 because it will display in htm
 function start() {
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] //declaring an array to allow keypress judging, and eliminate double keys.
     var wordToGuess = wordBank[Math.floor(Math.random() * wordBank.length)];//picks a random word
-    var guessesLeft = 9; //sets or resets the users guesscount
+    var guessesLeft = 8; //sets or resets the users guesscount
     var toGuessLower = wordToGuess.toLowerCase() //creates a lowercase version of our wordtoguess so we can save the capitals in the original array
     var answer = []; //sets appropriate amount of blanks
     var youguessed = []; //an array to print user guesses
