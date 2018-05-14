@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Imperial Security Terminal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Poller+One|VT323" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="assets/JavaScript/javascript.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Imperial Code Cracker</h1>
+    </header>
+
+<!-- scrapped my audio after an hour and a half -->
+
+
+    <div class="content">
+        <div class="instructions" id="instructions">
+            <P>You will soon be provided with Rebel codes to crack</P>
+            <br>
+            <p>You will have roughly 9 guesses</p>
+            <br>
+            <p>Press 'Shift' to begin</p>
+        </div>
+
+
+        <div class="answer" id="answers">
+            <p id="answer"></p>
+            <br>
+            <p id="chosen"></p>
+            <br>
+            <p>You have <span id="guessesLeft"></span> remaining inputs</p>
+        </div>
+
+
+        <div class="scoreboard" id="scoreboard">
+            <p>Codes Cracked:<span id="wins">0</span></p>
+            <br>
+            <p>Rebels Escaped:<span id="losses">0</span></p>
+        </div>
+    </div>
+
+    <div class="feedback">
+        <p id="feedback"></p>
+        <p id="solution"></p>
+    </div>
+</body>
+
+</html>

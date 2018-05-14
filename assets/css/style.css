@@ -1,0 +1,73 @@
+/* 
+font-family: 'Poller One', cursive;         star Wars
+font-family: 'VT323', monospace;            8bitty
+font-family: 'Orbitron', sans-serif;        clean sci-fi
+ */
+*{
+    box-sizing: border-box;
+}
+
+ body{
+    font-family: 'Orbitron', sans-serif;
+    width: 100%;
+    color: rgb(0,0,0);
+    background-image: url("../pics/bgtile.jpg");
+    background-color: black
+ }
+
+ header{
+     font-size: 55pt;
+     text-align: center;
+     letter-spacing: -4px;
+     padding: 5%;
+     text-shadow: 
+     2px 2px yellow,
+     2px -2px yellow,
+     -2px 2px yellow,
+     -2px -2px yellow;
+     background-color: rgba(0,0,0,.3);
+     width: 100%;
+     border-radius: 48px;
+     margin: auto;
+ }
+
+ .content{
+     width:768px;
+     color:#ffff;
+     background-color: rgba(35, 35, 35, 0.678);
+     margin: auto;
+     font-family: 'VT323', monospace;
+     padding: 100px;
+     border-radius: 100px;
+     font-size: 20pt;
+     overflow: auto;
+     clear: both;
+
+ }
+.instructions{
+    clear: both;
+    margin:auto;
+    
+}
+ .answer{
+     display: none;
+     float:left;
+     width: 360px;
+ }
+
+ .scoreboard{
+     display: none;
+     float:right;
+     width: 200px;
+ }
+
+ .feedback{
+    font-family: 'Orbitron', sans-serif;
+    color: yellow;
+    text-align: center;
+    clear: both;
+    font-size:25pt;
+    padding: 10px;
+    text-shadow: 4px 4px black;
+
+ }
