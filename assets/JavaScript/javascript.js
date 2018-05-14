@@ -56,7 +56,7 @@ function start() {
         //wrong guess removes that guess from the alphabet and logs it on screen
         else if (!wordToGuess.toLowerCase().includes(guess)) {
             var nope = alphabet.indexOf(guess);
-            document.getElementById("guessesLeft").innerHTMl = guessesLeft
+            document.getElementById("guessesLeft").innerHTML = guessesLeft;
             guessesLeft--;
             youguessed.push(guess);
             alphabet.splice(nope, 1)
