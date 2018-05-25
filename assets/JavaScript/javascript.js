@@ -4,7 +4,11 @@ var wordBank = ['Luke Skywalker', 'Han Solo', 'Greedo', 'Jabba the Hutt', 'Wooki
 
 var wins = 1;
 var losses = 1;//declaring values for later ( = 1 because it will display in html as zero, and when it writes its first win condition i want it to start with 1
-
+var correctSound = new Audio("./assets/sounds/correct.wav")
+var winSound = new Audio("./assets/sounds/win.wav")
+var wrongSound = new Audio("./assets/sounds/badentry.wav")
+var loseSound = new Audio("./assets/sounds/loss.wav")
+var yodaSound = new Audio("./assets/sounds/yodalaughing.wav")
 
 function start() {
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] //declaring an array to allow keypress judging, and eliminate double keys.
@@ -28,12 +32,17 @@ function start() {
         var guess = event.key.toLowerCase(); //logs user press
         if (guess === ' ') {
             document.getElementById("feedback").innerHTML = "Space is for adventures";
-            
+            yodaSound.volume = 0.3;
+            yodaSound.play();
         } //heh
         else if (!alphabet.includes(guess)) {
-            document.getElementById("feedback").innerHTML = "Wise choice, that is not"
-        } //stops user from guessing silly things
+            document.getElementById("feedback").innerHTML = "Wise choice, that is not";
+            wrongSound.volume = 0.3
+            wrongSound.play();
+        } //prevents user from wasting keystrokcs on non-alphabet andwers
         else if (toGuessLower.includes(guess)) {//user guesses correctly
+            correctSound.volume = 0.3
+            correctSound.play();
             for (j = 0; j < wordToGuess.length; j++) {
                 //searches word for matching guesses
                 if (wordToGuess[j].toLowerCase() === guess) {
@@ -47,9 +56,10 @@ function start() {
                         document.getElementById("wins").innerHTML = wins
                         wins++;
                         document.getElementById("solution").innerHTML = "The code you cracked was " + wordToGuess;
+                        winSound.volume = 0.3
+                        winSound.play();
                         start();//loops game
                     }
-
                 }
             }
         }
@@ -60,7 +70,7 @@ function start() {
             guessesLeft--;
             youguessed.push(guess);
             alphabet.splice(nope, 1)
-            document.getElementById("chosen").innerHTML ='Eliminated Letters: ' + youguessed.join(', ');
+            document.getElementById("chosen").innerHTML = 'Eliminated Letters: ' + youguessed.join(', ');
         }
         if (guessesLeft === 1) {
             document.getElementById("feedback").innerHTML = "I've got a bad feeling about this...";
@@ -69,15 +79,13 @@ function start() {
             document.getElementById("feedback").innerHTML = "We're one Rebel spy closer to losing these ... Star Wars";
             document.getElementById("losses").innerHTML = losses;
             losses++;
-            document.getElementById("solution").innerHTML = "The name of your failure was " + wordToGuess
+            document.getElementById("solution").innerHTML = "The name of your failure was " + wordToGuess;
+            loseSound.volume = 0.3;
+            loseSound.play();
             start();// 0 guesses left is a loss, this also loops the game.
         }
     }
 }
-
-
-
-
 
 //actual games start function. removes instuctions and displays game.
 document.onkeyup = function (event) {
