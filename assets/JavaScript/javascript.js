@@ -71,6 +71,8 @@ function start() {
             youguessed.push(guess);
             alphabet.splice(nope, 1)
             document.getElementById("chosen").innerHTML = 'Eliminated Letters: ' + youguessed.join(', ');
+            wrongSound.volume = 0.3;
+            wrongSound.play();
         }
         if (guessesLeft === 1) {
             document.getElementById("feedback").innerHTML = "I've got a bad feeling about this...";
